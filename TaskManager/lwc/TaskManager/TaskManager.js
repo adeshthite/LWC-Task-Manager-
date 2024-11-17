@@ -8,7 +8,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { refreshApex } from '@salesforce/apex';
 
 
-export default class TasknewCreate extends LightningElement {
+export default class TaskManager extends LightningElement {
     @track tasks;
 
     wiredTaskResult = [];
