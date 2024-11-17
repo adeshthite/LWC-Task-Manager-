@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Task Manager">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Task Name" value={taskName} onchange={handleInputChange} data-id="taskName"></lightning-input>
+            <lightning-textarea label="Description" value={description} onchange={handleInputChange} data-id="description"></lightning-textarea>
+            <lightning-input type="date" label="Due Date" value={dueDate} onchange={handleInputChange} data-id="dueDate"></lightning-input>
+            <lightning-combobox label="Priority" value={priority} options={priorityOptions} onchange={handleInputChange} data-id="priority"></lightning-combobox>
+            <lightning-combobox label="Status" value={status} options={statusOptions} onchange={handleInputChange} data-id="status" disabled></lightning-combobox>
+
+            <div class="slds-p-top_medium">
+                 <lightning-button variant="brand" label="Create Task" title="titleName" onclick={createTask}></lightning-button>
+            </div>
+        </div>
+        
+        <div style="height: 300px;">
+        <lightning-datatable
+            key-field="id"
+            data={tasks}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
