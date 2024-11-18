@@ -27,7 +27,8 @@ public class TaskController {
     }
 
 
-    @AuraEnabled public static void updateTaskStatus(Id taskId, String status) { 
+    @AuraEnabled 
+public static void updateTaskStatus(Id taskId, String status) { 
             Task__c task = [SELECT Id, Status__c FROM Task__c WHERE Id = :taskId]; 
             task.Status__c = status; 
             update task; 
